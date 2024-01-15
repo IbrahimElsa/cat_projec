@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className="bg-earthy-green text-soft-cream p-4 flex flex-col md:flex-row justify-between w-full">
+        <div className="bg-earthy-green text-soft-cream p-4 py-7 flex flex-col xl:flex-row justify-between w-full">
             {/* Top Bar with Home Link and Hamburger Menu */}
-            <div className='flex justify-between items-center w-full'>
-                <Link to="/" className="hover:text-white py-2 px-3">Home</Link>
-                <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div className='flex justify-between items-center '>
+                <Link to="/" className="hover:text-white px-3">Home</Link>
+                <button className="xl:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -17,41 +18,56 @@ const Navbar = () => {
             </div>
 
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 md:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4`}>
+            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-4 w-full justify-end`}>
                 {/* Cat Food & Nutrition Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/cat-food-nutrition" className="hover:text-white py-2 px-3">
-                        Food & Nutrition
+                    <Link to="/food-nutrition" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Food & Nutrition</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
-                        <Link to="/cat-food-nutrition#requirements" className="py-2 px-4 block hover:bg-gray-600">Nutritional Requirements</Link>
-                        <Link to="/cat-food-nutrition#recommended-foods" className="py-2 px-4 block hover:bg-gray-600">Recommended Foods</Link>
-                        <Link to="/cat-food-nutrition#special-diets" className="py-2 px-4 block hover:bg-gray-600">Special Diets</Link>
-                        <Link to="/cat-food-nutrition#safety" className="py-2 px-4 block hover:bg-gray-600">Food Safety and Storage</Link>
-                        <Link to="/cat-food-nutrition#reviews" className="py-2 px-4 block hover:bg-gray-600">Food Reviews</Link>
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white transition ease-in-out duration-500">
+                        <Link to="/food-nutrition#requirements" className="py-2 px-4 block hover:bg-gray-600">Nutritional Requirements</Link>
+                        <Link to="/food-nutrition#recommended-foods" className="py-2 px-4 block hover:bg-gray-600">Recommended Foods</Link>
+                        <Link to="/food-nutrition#special-diets" className="py-2 px-4 block hover:bg-gray-600">Special Diets</Link>
+                        <Link to="/food-nutrition#safety" className="py-2 px-4 block hover:bg-gray-600">Food Safety and Storage</Link>
+                        <Link to="/food-nutrition#reviews" className="py-2 px-4 block hover:bg-gray-600">Food Reviews</Link>
                     </div>
                 </div>
 
                 {/* Cat Litter & Hygiene Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/cat-litter-hygiene" className="hover:text-white py-2 px-3">
-                        Litter & Hygiene
+                    <Link to="/litter-hygiene" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Litter & Hygiene</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
-                        <Link to="/cat-litter-hygiene#types-of-litter" className="py-2 px-4 block hover:bg-gray-600">Types of Litter</Link>
-                        <Link to="/cat-litter-hygiene#litter-box-maintenance" className="py-2 px-4 block hover:bg-gray-600">Litter Box Maintenance</Link>
-                        <Link to="/cat-litter-hygiene#litter-box-training" className="py-2 px-4 block hover:bg-gray-600">Litter Box Training</Link>
-                        <Link to="/cat-litter-hygiene#common-issues" className="py-2 px-4 block hover:bg-gray-600">Common Issues</Link>
-                        <Link to="/cat-litter-hygiene#product-reviews" className="py-2 px-4 block hover:bg-gray-600">Product Reviews</Link>
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
+                        <Link to="/litter-hygiene#types-of-litter" className="py-2 px-4 block hover:bg-gray-600">Types of Litter</Link>
+                        <Link to="/litter-hygiene#litter-box-maintenance" className="py-2 px-4 block hover:bg-gray-600">Litter Box Maintenance</Link>
+                        <Link to="/litter-hygiene#litter-box-training" className="py-2 px-4 block hover:bg-gray-600">Litter Box Training</Link>
+                        <Link to="/litter-hygiene#common-issues" className="py-2 px-4 block hover:bg-gray-600">Common Issues</Link>
+                        <Link to="/litter-hygiene#product-reviews" className="py-2 px-4 block hover:bg-gray-600">Product Reviews</Link>
                     </div>
                 </div>
 
                 {/* Behavior & Training Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/behavior-training" className="hover:text-white py-2 px-3">
-                        Behavior & Training
+                    <Link to="/behavior-training" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Behavior & Training</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
                         <Link to="/behavior-training#understanding-behavior" className="py-2 px-4 block hover:bg-gray-600">Understanding Behavior</Link>
                         <Link to="/behavior-training#training-basics" className="py-2 px-4 block hover:bg-gray-600">Training Basics</Link>
                         <Link to="/behavior-training#behavioral-issues" className="py-2 px-4 block hover:bg-gray-600">Behavioral Issues</Link>
@@ -62,10 +78,15 @@ const Navbar = () => {
 
                 {/* Health & Wellness Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/health-wellness" className="hover:text-white py-2 px-3">
-                        Health & Wellness
+                    <Link to="/health-wellness" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Health & Wellness</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
                         <Link to="/health-wellness#common-health-issues" className="py-2 px-4 block hover:bg-gray-600">Common Health Issues</Link>
                         <Link to="/health-wellness#preventative-care" className="py-2 px-4 block hover:bg-gray-600">Preventative Care</Link>
                         <Link to="/health-wellness#vaccinations" className="py-2 px-4 block hover:bg-gray-600">Vaccinations</Link>
@@ -77,22 +98,32 @@ const Navbar = () => {
 
                 {/* Cat Breeds Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/cat-breeds" className="hover:text-white py-2 px-3">
-                        Breeds
+                    <Link to="/breeds" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Breeds</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
-                        <Link to="/cat-breeds#overview" className="py-2 px-4 block hover:bg-gray-600">Overview of Breeds</Link>
-                        <Link to="/cat-breeds#breed-specific-care" className="py-2 px-4 block hover:bg-gray-600">Breed-Specific Care</Link>
-                        <Link to="/cat-breeds#choosing-right-breed" className="py-2 px-4 block hover:bg-gray-600">Choosing the Right Breed</Link>
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
+                        <Link to="/breeds#overview" className="py-2 px-4 block hover:bg-gray-600">Overview of Breeds</Link>
+                        <Link to="/breeds#breed-specific-care" className="py-2 px-4 block hover:bg-gray-600">Breed-Specific Care</Link>
+                        <Link to="/breeds#choosing-right-breed" className="py-2 px-4 block hover:bg-gray-600">Choosing the Right Breed</Link>
                     </div>
                 </div>
 
                 {/* Product Reviews & Recommendations Dropdown */}
                 <div className="dropdown relative">
-                    <Link to="/product-reviews" className="hover:text-white py-2 px-3">
-                        Product Reviews
+                    <Link to="/product-reviews" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>Product Reviews</h1>
+                        </div>
+                        <div className='my-auto'>
+                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
+                        </div>
                     </Link>
-                    <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
+                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
                         <Link to="/product-reviews#food-treats" className="py-2 px-4 block hover:bg-gray-600">Food and Treats</Link>
                         <Link to="/product-reviews#litter-boxes" className="py-2 px-4 block hover:bg-gray-600">Litter and Litter Boxes</Link>
                         <Link to="/product-reviews#toys" className="py-2 px-4 block hover:bg-gray-600">Toys and Enrichment</Link>
@@ -102,7 +133,13 @@ const Navbar = () => {
                 </div>
 
                 {/* Additional Single Link - About */}
-                <Link to="/about" className="hover:text-white py-2 px-3">About</Link>
+                <div>
+                    <Link to="/about" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                        <div>
+                            <h1>About</h1>
+                        </div>
+                    </Link>
+                </div>
             </div>
         </div>
     );
