@@ -21,7 +21,7 @@ const Navbar = () => {
                 {/* Cat Food & Nutrition Dropdown */}
                 <div className="dropdown relative">
                     <Link to="/cat-food-nutrition" className="hover:text-white py-2 px-3">
-                        Cat Food & Nutrition
+                        Food & Nutrition
                     </Link>
                     <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
                         <Link to="/cat-food-nutrition#requirements" className="py-2 px-4 block hover:bg-gray-600">Nutritional Requirements</Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
                 {/* Cat Litter & Hygiene Dropdown */}
                 <div className="dropdown relative">
                     <Link to="/cat-litter-hygiene" className="hover:text-white py-2 px-3">
-                        Cat Litter & Hygiene
+                        Litter & Hygiene
                     </Link>
                     <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
                         <Link to="/cat-litter-hygiene#types-of-litter" className="py-2 px-4 block hover:bg-gray-600">Types of Litter</Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 {/* Cat Breeds Dropdown */}
                 <div className="dropdown relative">
                     <Link to="/cat-breeds" className="hover:text-white py-2 px-3">
-                        Cat Breeds
+                        Breeds
                     </Link>
                     <div className="dropdown-menu absolute hidden md:hover:block bg-gray-700 text-white">
                         <Link to="/cat-breeds#overview" className="py-2 px-4 block hover:bg-gray-600">Overview of Breeds</Link>
