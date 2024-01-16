@@ -4,9 +4,10 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
-        <div className="bg-earthy-green text-soft-cream p-4 py-7 flex flex-col xl:flex-row justify-between w-full">
+        <div className={`bg-earthy-green text-soft-cream p-4 py-7 flex flex-col xl:flex-row justify-between w-full ${isMenuOpen ? 'fixed top-0 left-0 z-50 xl:relative' : 'xl:relative'}`}>
             {/* Top Bar with Home Link and Hamburger Menu */}
             <div className='flex justify-between items-center '>
                 <Link to="/" className="hover:text-white px-3">Home</Link>
@@ -18,24 +19,27 @@ const Navbar = () => {
             </div>
 
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-4 w-full justify-end`}>
+            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-4 w-full justify-endfixed top-0 right-0`}>
                 {/* Cat Food & Nutrition Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/food-nutrition" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown relative" onBlur={() => setIsDropdownOpen(false)}>
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2">
                         <div>
-                            <h1>Food & Nutrition</h1>
+                            <Link to="/food-nutrition">Food & Nutrition</Link>
                         </div>
-                        <div className='my-auto'>
+                        <div className='my-auto' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                             <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
                         </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white transition ease-in-out duration-500">
-                        <Link to="/food-nutrition#requirements" className="py-2 px-4 block hover:bg-gray-600">Nutritional Requirements</Link>
-                        <Link to="/food-nutrition#recommended-foods" className="py-2 px-4 block hover:bg-gray-600">Recommended Foods</Link>
-                        <Link to="/food-nutrition#special-diets" className="py-2 px-4 block hover:bg-gray-600">Special Diets</Link>
-                        <Link to="/food-nutrition#safety" className="py-2 px-4 block hover:bg-gray-600">Food Safety and Storage</Link>
-                        <Link to="/food-nutrition#reviews" className="py-2 px-4 block hover:bg-gray-600">Food Reviews</Link>
                     </div>
+                    {/* Dropdown Menu */}
+                    {isDropdownOpen && (
+                        <div className="dropdown-menu absolute w-48 mt-2 py-2 bg-white rounded-lg shadow-xl">
+                            <Link to="/food-nutrition#requirements" className="block px-4 py-2 hover:bg-gray-200">Nutritional Requirements</Link>
+                            <Link to="/food-nutrition#recommended-foods" className="block px-4 py-2 hover:bg-gray-200">Recommended Foods</Link>
+                            <Link to="/food-nutrition#special-diets" className="block px-4 py-2 hover:bg-gray-200">Special Diets</Link>
+                            <Link to="/food-nutrition#safety" className="block px-4 py-2 hover:bg-gray-200">Food Safety and Storage</Link>
+                            <Link to="/food-nutrition#reviews" className="block px-4 py-2 hover:bg-gray-200">Food Reviews</Link>
+                        </div>
+                    )}
                 </div>
 
                 {/* Cat Litter & Hygiene Dropdown */}
