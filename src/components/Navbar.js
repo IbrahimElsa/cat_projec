@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
-        <div className={`bg-earthy-green text-soft-cream p-4 py-7 flex flex-col xl:flex-row justify-between w-full ${isMenuOpen ? 'left-0 xl:relative' : 'xl:relative'}`}>
+        <div className={`bg-earthy-green text-soft-cream p-4 py-7 flex flex-col w-full xl:w-[200px] h-auto xl:h-full fixed left-0 top-0 xl:flex-col`}>
         {/* Top Bar with Home Link and Hamburger Menu */}
             <div className='flex justify-between items-center '>
                 <Link to="/" className="hover:text-white px-3">Home</Link>
@@ -17,9 +17,9 @@ const Navbar = () => {
                     </svg>
                 </button>
             </div>
-
+    
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-4 w-full justify-end sticky top-0 z-10`}>
+            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-row xl:flex-col space-y-4 xl:space-y-0 xl:space-x-4 w-full sticky top-0 z-10`}>
                 {/* Cat Food & Nutrition Dropdown */}
                 <div className="dropdown relative" onBlur={() => setIsDropdownOpen(false)}>
                     <div className="hover:text-white py-2 px-3 flex justify-between mx-2">
