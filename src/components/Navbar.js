@@ -19,7 +19,7 @@ const Navbar = () => {
             </div>
     
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-row xl:flex-col space-y-4 xl:space-y-0 xl:space-x-4 w-full sticky top-0 z-10`}>
+            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col space-y-4 xl:space-y-0 xl:space-x-4 w-full sticky top-0 z-10`}>
                 {/* Cat Food & Nutrition Dropdown */}
                 <div className="dropdown relative" onBlur={() => setIsDropdownOpen(false)}>
                     <div className="hover:text-white py-2 px-3 flex justify-between mx-2">

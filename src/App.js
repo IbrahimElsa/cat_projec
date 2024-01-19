@@ -13,16 +13,18 @@ import Nutrition from './pages/Nutrition';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/food-nutrition" element={<Nutrition />} />
-        <Route path="/litter-hygiene" element={<Hygiene />} />
-        <Route path="/behavior-training" element={<Training />} />
-        <Route path="/health-wellness" element={<Health />} />
-        <Route path="/breeds" element={<Breeds />} />
-        <Route path="/product-reviews" element={<Reviews />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <div className="mt-20 xl:ml-48 mt-0"> {/* Adjust this value according to your navbar's height */}
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/food-nutrition" element={<Nutrition />} />
+          <Route path="/litter-hygiene" element={<Hygiene />} />
+          <Route path="/behavior-training" element={<Training />} />
+          <Route path="/health-wellness" element={<Health />} />
+          <Route path="/breeds" element={<Breeds />} />
+          <Route path="/product-reviews" element={<Reviews />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
