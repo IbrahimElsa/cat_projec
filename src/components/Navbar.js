@@ -4,11 +4,15 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState('');
+
+    const toggleDropdown = (dropdownName) => {
+        setOpenDropdown(openDropdown === dropdownName ? '' : dropdownName);
+    };
 
     return (
         <div className={`bg-earthy-green text-soft-cream p-4 py-7 flex flex-col w-full xl:w-[200px] h-auto xl:h-full fixed left-0 top-0 xl:flex-col`}>
-        {/* Top Bar with Home Link and Hamburger Menu */}
+            {/* Top Bar with Home Link and Hamburger Menu */}
             <div className='flex justify-between items-center '>
                 <Link to="/" className="hover:text-white px-3">Home</Link>
                 <button className="xl:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -17,123 +21,117 @@ const Navbar = () => {
                     </svg>
                 </button>
             </div>
-    
+
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col space-y-4 xl:space-y-0 xl:space-x-4 w-full sticky top-0 z-10`}>
+            <div className={`mt-4 xl:mt-0 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col space-y-4 xl:space-y-0 xl:space-x-4 w-full`}>
                 {/* Cat Food & Nutrition Dropdown */}
-                <div className="dropdown relative" onBlur={() => setIsDropdownOpen(false)}>
-                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('food-nutrition')}>
                         <div>
                             <Link to="/food-nutrition">Food & Nutrition</Link>
                         </div>
-                        <div className='my-auto' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
                     {/* Dropdown Menu */}
-                    {isDropdownOpen && (
-                        <div className="dropdown-menu absolute w-48 mt-2 py-2 bg-white rounded-lg shadow-xl">
-                            <Link to="/food-nutrition#requirements" className="block px-4 py-2 hover:bg-gray-200">Nutritional Requirements</Link>
-                            <Link to="/food-nutrition#recommended-foods" className="block px-4 py-2 hover:bg-gray-200">Recommended Foods</Link>
-                            <Link to="/food-nutrition#special-diets" className="block px-4 py-2 hover:bg-gray-200">Special Diets</Link>
-                            <Link to="/food-nutrition#safety" className="block px-4 py-2 hover:bg-gray-200">Food Safety and Storage</Link>
-                            <Link to="/food-nutrition#reviews" className="block px-4 py-2 hover:bg-gray-200">Food Reviews</Link>
+                    {openDropdown === 'food-nutrition' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                            <Link to="/food-nutrition#requirements" className="block px-4 py-2 hover:bg-mid-green">Nutritional Requirements</Link>
+                            <Link to="/food-nutrition#recommended-foods" className="block px-4 py-2 hover:bg-mid-green">Recommended Foods</Link>
+                            <Link to="/food-nutrition#special-diets" className="block px-4 py-2 hover:bg-mid-green">Special Diets</Link>
+                            <Link to="/food-nutrition#safety" className="block px-4 py-2 hover:bg-mid-green">Food Safety and Storage</Link>
+                            <Link to="/food-nutrition#reviews" className="block px-4 py-2 hover:bg-mid-green">Food Reviews</Link>
                         </div>
                     )}
                 </div>
 
                 {/* Cat Litter & Hygiene Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/litter-hygiene" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('litter-hygiene')}>
                         <div>
-                            <h1>Litter & Hygiene</h1>
+                            <Link to="/litter-hygiene">Litter & Hygiene</Link>
                         </div>
-                        <div className='my-auto'>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
-                        <Link to="/litter-hygiene#types-of-litter" className="py-2 px-4 block hover:bg-gray-600">Types of Litter</Link>
-                        <Link to="/litter-hygiene#litter-box-maintenance" className="py-2 px-4 block hover:bg-gray-600">Litter Box Maintenance</Link>
-                        <Link to="/litter-hygiene#litter-box-training" className="py-2 px-4 block hover:bg-gray-600">Litter Box Training</Link>
-                        <Link to="/litter-hygiene#common-issues" className="py-2 px-4 block hover:bg-gray-600">Common Issues</Link>
-                        <Link to="/litter-hygiene#product-reviews" className="py-2 px-4 block hover:bg-gray-600">Product Reviews</Link>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
+                    {openDropdown === 'litter-hygiene' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                        <Link to="/litter-hygiene#types-of-litter" className="py-2 px-4 block hover:bg-mid-green">Types of Litter</Link>
+                        <Link to="/litter-hygiene#litter-box-maintenance" className="py-2 px-4 block hover:bg-mid-green">Litter Box Maintenance</Link>
+                        <Link to="/litter-hygiene#litter-box-training" className="py-2 px-4 block hover:bg-mid-green">Litter Box Training</Link>
+                        <Link to="/litter-hygiene#common-issues" className="py-2 px-4 block hover:bg-mid-green">Common Issues</Link>
+                        <Link to="/litter-hygiene#product-reviews" className="py-2 px-4 block hover:bg-mid-green">Product Reviews</Link>                        </div>
+                    )}
                 </div>
 
                 {/* Behavior & Training Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/behavior-training" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('behavior-training')}>
                         <div>
-                            <h1>Behavior & Training</h1>
+                            <Link to="/behavior-training">Behavior & Training</Link>
                         </div>
-                        <div className='my-auto'>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
-                        <Link to="/behavior-training#understanding-behavior" className="py-2 px-4 block hover:bg-gray-600">Understanding Behavior</Link>
-                        <Link to="/behavior-training#training-basics" className="py-2 px-4 block hover:bg-gray-600">Training Basics</Link>
-                        <Link to="/behavior-training#behavioral-issues" className="py-2 px-4 block hover:bg-gray-600">Behavioral Issues</Link>
-                        <Link to="/behavior-training#enrichment-toys" className="py-2 px-4 block hover:bg-gray-600">Enrichment and Toys</Link>
-                        <Link to="/behavior-training#socialization-tips" className="py-2 px-4 block hover:bg-gray-600">Socialization Tips</Link>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
+                    {openDropdown === 'behavior-training' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                        <Link to="/behavior-training#understanding-behavior" className="py-2 px-4 block hover:bg-mid-green">Understanding Behavior</Link>
+                        <Link to="/behavior-training#training-basics" className="py-2 px-4 block hover:bg-mid-green">Training Basics</Link>
+                        <Link to="/behavior-training#behavioral-issues" className="py-2 px-4 block hover:bg-mid-green">Behavioral Issues</Link>
+                        <Link to="/behavior-training#enrichment-toys" className="py-2 px-4 block hover:bg-mid-green">Enrichment and Toys</Link>
+                        <Link to="/behavior-training#socialization-tips" className="py-2 px-4 block hover:bg-mid-green">Socialization Tips</Link>                        </div>
+                    )}
                 </div>
 
                 {/* Health & Wellness Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/health-wellness" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('health-wellness')}>
                         <div>
-                            <h1>Health & Wellness</h1>
+                            <Link to="/health-wellness">Health & Wellness</Link>
                         </div>
-                        <div className='my-auto'>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
-                        <Link to="/health-wellness#common-health-issues" className="py-2 px-4 block hover:bg-gray-600">Common Health Issues</Link>
-                        <Link to="/health-wellness#preventative-care" className="py-2 px-4 block hover:bg-gray-600">Preventative Care</Link>
-                        <Link to="/health-wellness#vaccinations" className="py-2 px-4 block hover:bg-gray-600">Vaccinations</Link>
-                        <Link to="/health-wellness#spaying-neutering" className="py-2 px-4 block hover:bg-gray-600">Spaying and Neutering</Link>
-                        <Link to="/health-wellness#first-aid" className="py-2 px-4 block hover:bg-gray-600">First Aid Tips</Link>
-                        <Link to="/health-wellness#vet-visits" className="py-2 px-4 block hover:bg-gray-600">When to Visit a Vet</Link>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
+                    {openDropdown === 'health-wellness' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                        <Link to="/health-wellness#common-health-issues" className="py-2 px-4 block hover:bg-mid-green">Common Health Issues</Link>
+                        <Link to="/health-wellness#preventative-care" className="py-2 px-4 block hover:bg-mid-green">Preventative Care</Link>
+                        <Link to="/health-wellness#vaccinations" className="py-2 px-4 block hover:bg-mid-green">Vaccinations</Link>
+                        <Link to="/health-wellness#spaying-neutering" className="py-2 px-4 block hover:bg-mid-green">Spaying and Neutering</Link>
+                        <Link to="/health-wellness#first-aid" className="py-2 px-4 block hover:bg-mid-green">First Aid Tips</Link>
+                        <Link to="/health-wellness#vet-visits" className="py-2 px-4 block hover:bg-mid-green">When to Visit a Vet</Link>                        
+                        </div>
+                    )}
                 </div>
-
                 {/* Cat Breeds Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/breeds" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('breeds')}>
                         <div>
-                            <h1>Breeds</h1>
+                            <Link to="/breeds">Breeds</Link>
                         </div>
-                        <div className='my-auto'>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
-                        <Link to="/breeds#overview" className="py-2 px-4 block hover:bg-gray-600">Overview of Breeds</Link>
-                        <Link to="/breeds#breed-specific-care" className="py-2 px-4 block hover:bg-gray-600">Breed-Specific Care</Link>
-                        <Link to="/breeds#choosing-right-breed" className="py-2 px-4 block hover:bg-gray-600">Choosing the Right Breed</Link>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
+                    {openDropdown === 'breeds' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                        <Link to="/breeds#overview" className="py-2 px-4 block hover:bg-mid-green">Overview of Breeds</Link>
+                        <Link to="/breeds#breed-specific-care" className="py-2 px-4 block hover:bg-mid-green">Breed-Specific Care</Link>
+                        <Link to="/breeds#choosing-right-breed" className="py-2 px-4 block hover:bg-mid-green">Choosing the Right Breed</Link>                        
+                        </div>
+                    )}
                 </div>
-
                 {/* Product Reviews & Recommendations Dropdown */}
-                <div className="dropdown relative">
-                    <Link to="/product-reviews" className="hover:text-white py-2 px-3 flex justify-between mx-2">
+                <div className="dropdown">
+                    <div className="hover:text-white py-2 px-3 flex justify-between mx-2" onClick={() => toggleDropdown('product-reviews')}>
                         <div>
-                            <h1>Product Reviews</h1>
+                            <Link to="/product-reviews">Product Reviews</Link>
                         </div>
-                        <div className='my-auto'>
-                            <IoIosArrowDown className='block xl:hidden h-6 w-6'/>
-                        </div>
-                    </Link>
-                    <div className="dropdown-menu absolute hidden xl:hover:block bg-gray-700 text-white">
-                        <Link to="/product-reviews#food-treats" className="py-2 px-4 block hover:bg-gray-600">Food and Treats</Link>
-                        <Link to="/product-reviews#litter-boxes" className="py-2 px-4 block hover:bg-gray-600">Litter and Litter Boxes</Link>
-                        <Link to="/product-reviews#toys" className="py-2 px-4 block hover:bg-gray-600">Toys and Enrichment</Link>
-                        <Link to="/product-reviews#grooming-tools" className="py-2 px-4 block hover:bg-gray-600">Grooming Tools</Link>
-                        <Link to="/product-reviews#beds-furniture" className="py-2 px-4 block hover:bg-gray-600">Beds and Furniture</Link>
+                        <IoIosArrowDown className='block h-6 w-6'/>
                     </div>
+                    {openDropdown === 'product-reviews' && (
+                        <div className="dropdown-menu mt-2 py-2 rounded-lg">
+                        <Link to="/product-reviews#food-treats" className="py-2 px-4 block hover:bg-mid-green">Food and Treats</Link>
+                        <Link to="/product-reviews#litter-boxes" className="py-2 px-4 block hover:bg-mid-green">Litter and Litter Boxes</Link>
+                        <Link to="/product-reviews#toys" className="py-2 px-4 block hover:bg-mid-green">Toys and Enrichment</Link>
+                        <Link to="/product-reviews#grooming-tools" className="py-2 px-4 block hover:bg-mid-green">Grooming Tools</Link>
+                        <Link to="/product-reviews#beds-furniture" className="py-2 px-4 block hover:bg-mid-green">Beds and Furniture</Link>                        
+                        </div>
+                    )}
                 </div>
 
                 {/* Additional Single Link - About */}
