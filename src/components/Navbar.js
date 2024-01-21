@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
+import Logo from '../assets/catWikiLogo.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,8 +14,10 @@ const Navbar = () => {
     return (
         <div className={`bg-earthy-green text-soft-cream p-4 py-7 flex flex-col w-full xl:w-[200px] h-auto xl:h-full fixed left-0 top-0 xl:flex-col`}>
             {/* Top Bar with Home Link and Hamburger Menu */}
-            <div className='flex justify-between items-center '>
-                <Link to="/" className="hover:text-white px-3">Home</Link>
+            <div className='flex justify-between items-center mx-auto'>
+                <Link to="/" className="hover:text-white px-3">
+                    <img src={Logo} alt="Logo" className="h-[6vh] xl:h-[12vh]" />
+                </Link>
                 <button className="xl:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>

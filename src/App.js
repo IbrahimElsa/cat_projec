@@ -13,7 +13,7 @@ import Nutrition from './pages/Nutrition';
 function App() {
   return (
     <Router>
-      <div className="mt-20 xl:ml-48 mt-0"> {/* Adjust this value according to your navbar's height */}
+      <div className="mt-20 xl:ml-48 mt-0"> 
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/food-nutrition" element={<Nutrition />} />
