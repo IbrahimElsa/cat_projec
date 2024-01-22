@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 function Main() {
   return (
-    <div className="mt-20 xl:ml-48 xl:mt-0"> 
+    <div className="mt-20 xl:ml-60 xl:mt-0"> 
         <div>
         <Navbar />
             {/* Hero Section */}
