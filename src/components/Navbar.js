@@ -1,24 +1,53 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import Logo from '../assets/catWikiLogo.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState('');
+    const location = useLocation();
+    const desktopBreakpoint = 768; // Tailwind CSS md breakpoint
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= desktopBreakpoint) {
+                setOpenDropdown(determineOpenDropdown(location.pathname));
+            } else {
+                setOpenDropdown('');
+            }
+        };
+
+        const determineOpenDropdown = (path) => {
+            if (path.includes('/food-nutrition')) return 'food-nutrition';
+            if (path.includes('/litter-hygiene')) return 'litter-hygiene';
+            if (path.includes('/behavior-training')) return 'behavior-training';
+            if (path.includes('/health-wellness')) return 'health-wellness';
+            if (path.includes('/breeds')) return 'breeds';
+            if (path.includes('/product-reviews')) return 'product-reviews';
+            return '';
+        };
+
+        handleResize(); // Call on mount
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [location]);
 
     const toggleDropdown = (dropdownName) => {
-        setOpenDropdown(openDropdown === dropdownName ? '' : dropdownName);
+        if (window.innerWidth >= desktopBreakpoint) {
+            setOpenDropdown(openDropdown === dropdownName ? '' : dropdownName);
+        }
     };
 
     return (
         <div className={`bg-earthy-green text-soft-cream flex flex-col w-full xl:w-[250px] h-auto xl:h-full fixed left-0 top-0 xl:flex-col `}>
             {/* Top Bar with Home Link and Hamburger Menu */}
             <div className='flex justify-between items-center'>
-                <div className="flex xl:mx-auto">
-                <Link to="/" className="hover:text-white">
-                    <img src={Logo} alt="Logo" className="h-16 xl:h-28" />
-                </Link>
+                <div className="flex xl:mx-auto items-center">
+                    <Link to="/" className="hover:text-white xl:translate-y-3">
+                        <img src={Logo} alt="Logo" className="h-16 xl:h-28" />
+                    </Link>
                 </div>
                 <button className="xl:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
