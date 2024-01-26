@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 
 function Main() {
-  return (
-    <div className="mt-20 xl:ml-60 xl:mt-0"> 
+return (
+    <div className=" mt-16 xl:ml-60 xl:mt-0"> 
         <div>
         <Navbar />
             {/* Hero Section */}
@@ -15,9 +15,9 @@ function Main() {
             {/* Introduction Section */}
             <section className="my-8 px-4">
                 <h3 className="text-2xl font-semibold">Learn About Cats</h3>
-                <p className="mt-2">
-                    Discover fascinating facts about cat breeds, understand their care needs, and explore tips on nutrition.
-                </p>
+                    <p className="mt-2">
+                        Discover fascinating facts about cat breeds, understand their care needs, and explore tips on nutrition.
+                    </p>
             </section>
 
             {/* Topic Links */}
