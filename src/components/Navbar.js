@@ -35,9 +35,7 @@ const Navbar = () => {
     }, [location]);
 
     const toggleDropdown = (dropdownName) => {
-        if (window.innerWidth >= desktopBreakpoint) {
-            setOpenDropdown(openDropdown === dropdownName ? '' : dropdownName);
-        }
+        setOpenDropdown(openDropdown === dropdownName ? '' : dropdownName);
     };
 
     return (
