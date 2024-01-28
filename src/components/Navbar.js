@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import Logo from '../assets/catWikiLogo.png';
+import '../App.css';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ const Navbar = () => {
                     </div>
                     {/* Dropdown Menu */}
                     {openDropdown === 'food-nutrition' && (
-                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3] ">
+                        <div className={`dropdown-menu mt-2 py-2 bg-[#a3bba3] transition duration-300 ease-in-out ${isMenuOpen ? 'animate-slideDown' : 'opacity-0'}`}>
                             <Link to="/food-nutrition#requirements" className="block px-6 py-2 hover:bg-mid-green">Nutritional Requirements</Link>
                             <Link to="/food-nutrition#recommended-foods" className="block px-6 py-2 hover:bg-mid-green">Recommended Foods</Link>
                             <Link to="/food-nutrition#special-diets" className="block px-6 py-2 hover:bg-mid-green">Special Diets</Link>
