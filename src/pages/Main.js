@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function Main() {
 return (
@@ -36,6 +37,7 @@ return (
                     <p>Understand the dietary needs of cats.</p>
                 </div>
             </section>
+        <Footer />
         </div>
     </div>
 );
