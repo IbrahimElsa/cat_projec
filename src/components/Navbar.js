@@ -8,7 +8,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState('');
     const location = useLocation();
-    const desktopBreakpoint = 768; // Tailwind CSS md breakpoint
+    const desktopBreakpoint = 768;
 
     useEffect(() => {
         const handleResize = () => {
