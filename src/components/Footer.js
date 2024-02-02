@@ -7,7 +7,6 @@ const Footer = () => {
             <div className="border-t border-mid-green w-10/12 mx-auto"></div>
             <div className="container mx-auto pt-4">
                 <p>&copy; {new Date().getFullYear()} My Website</p>
-                <p>Follow us on social media:</p>
                 <div className="flex justify-center space-x-4 pb-4 pt-2">
                     <a href="#" className="hover:text-gray-400"><FaFacebook size={24} /></a>
                     <a href="#" className="hover:text-gray-400"><FaTwitter size={24} /></a>

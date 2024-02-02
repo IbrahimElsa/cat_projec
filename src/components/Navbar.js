@@ -48,7 +48,7 @@ const Navbar = () => {
                         <img src={Logo} alt="Logo" className="h-16 xl:h-28" />
                     </Link>
                 </div>
-                <button className="xl:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <button className="xl:hidden pr-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -56,14 +56,14 @@ const Navbar = () => {
             </div>
 
             {/* Full Navbar for All Screens */}
-            <div className={`mt-4 xl:mt-0 xl:pt-5 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col space-y-4 xl:space-y-0 w-full`}>
+            <div className={`xl:mt-0 xl:pt-5 ${isMenuOpen ? 'flex' : 'hidden'} xl:flex flex-col space-y-4 xl:space-y-0 w-full`}>
                 {/* Cat Food & Nutrition Dropdown */}
                 <div className="dropdown " >
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'food-nutrition' ? 'text-white' : ''}`}  onClick={() => toggleDropdown('food-nutrition')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'food-nutrition' ? 'text-white' : ''}`}  onClick={() => toggleDropdown('food-nutrition')} >                    
                         <div>
                             <Link to="/food-nutrition">Food & Nutrition</Link>
                         </div>
-                        <IoIosArrowDown className={`block min-h-6 min-w-6  transform transition duration-300 ease-in-out ${openDropdown === 'food-nutrition' ? '-rotate-180' : ''}`}/>                    
+                        <IoIosArrowDown className={`block min-h-6 min-w-6 transform transition duration-300 ease-in-out ${openDropdown === 'food-nutrition' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {/* Dropdown Menu */}
                     {openDropdown === 'food-nutrition' && (
@@ -79,7 +79,7 @@ const Navbar = () => {
 
                 {/* Cat Litter & Hygiene Dropdown */}
                 <div className="dropdown">
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'litter-hygiene' ? '' : ''}`} onClick={() => toggleDropdown('litter-hygiene')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'litter-hygiene' ? '' : ''}`} onClick={() => toggleDropdown('litter-hygiene')} >                    
                         <div>
                             <Link to="/litter-hygiene">Litter & Hygiene</Link>
                         </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
 
                 {/* Behavior & Training Dropdown */}
                 <div className="dropdown">
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'behavior-training' ? '' : ''}`} onClick={() => toggleDropdown('behavior-training')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'behavior-training' ? '' : ''}`} onClick={() => toggleDropdown('behavior-training')} >                    
                         <div>
                             <Link to="/behavior-training">Behavior & Training</Link>
                         </div>
@@ -117,7 +117,7 @@ const Navbar = () => {
 
                 {/* Health & Wellness Dropdown */}
                 <div className="dropdown">
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'health-wellness' ? '' : ''}`} onClick={() => toggleDropdown('health-wellness')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'health-wellness' ? '' : ''}`} onClick={() => toggleDropdown('health-wellness')} >                    
                         <div>
                             <Link to="/health-wellness">Health & Wellness</Link>
                         </div>
@@ -136,7 +136,7 @@ const Navbar = () => {
                 </div>
                 {/* Cat Breeds Dropdown */}
                 <div className="dropdown">
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'breeds' ? '' : ''}`} onClick={() => toggleDropdown('breeds')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'breeds' ? '' : ''}`} onClick={() => toggleDropdown('breeds')} >                    
                         <div>
                             <Link to="/breeds">Breeds</Link>
                         </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
                 </div>
                 {/* Product Reviews & Recommendations Dropdown */}
                 <div className="dropdown">
-                    <div className={`hover:text-white py-2 flex justify-between mx-2 xl:pl-2 ${openDropdown === 'product-reviews' ? '' : ''}`} onClick={() => toggleDropdown('product-reviews')} >                    
+                    <div className={`hover:text-white py-2 flex justify-between mx-5 xl:pl-2 ${openDropdown === 'product-reviews' ? '' : ''}`} onClick={() => toggleDropdown('product-reviews')} >                    
                         <div>
                             <Link to="/product-reviews">Product Reviews</Link>
                         </div>
@@ -171,7 +171,7 @@ const Navbar = () => {
 
                 {/* Additional Single Link - About */}
                 <div>
-                    <Link to="/about" className="hover:text-white py-2 xl:pl-2 flex justify-between mx-2">
+                    <Link to="/about" className="hover:text-white py-2 xl:pl-2 flex justify-between mx-5 pb-5">
                         <div>
                             <h1>About</h1>
                         </div>
