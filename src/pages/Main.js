@@ -8,16 +8,17 @@ return (
         <div>
         <Navbar />
             {/* Hero Section */}
-            <section className="text-center bg-gray-200 py-20">
-                <h2 className="text-4xl font-bold">Welcome to Cat Wiki</h2>
-                <p className="mt-4 text-xl">Your one-stop destination for all things feline!</p>
+            <section className="text-center bg-gray-200 py-40">
+                    <h2 className="text-4xl font-bold">Welcome to Cat Wiki</h2>
+                    <p className="mt-4 text-xl">Your one-stop destination for all things feline!</p>
             </section>
 
             {/* Introduction Section */}
             <section className="my-8 px-4">
                 <h3 className="text-2xl font-semibold">Learn About Cats</h3>
                     <p className="mt-2">
-                        Discover fascinating facts about cat breeds, understand their care needs, and explore tips on nutrition.
+                        Discover fascinating facts about cats, understand their care needs, and explore tips on nutrition, hygiene
+                        general health tips and more.
                     </p>
             </section>
 
