@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Cat_breed_main from '../assets/Cat_breed_main.webp';
-import healthy_cat from '../assets/healthy-cat.jpeg';
+import healthy_cat from '../assets/healthy-cat.jpg';
 
 function Main() {
 return (
@@ -40,8 +40,8 @@ return (
                         backgroundSize: 'cover', 
                         backgroundPosition: 'center' 
                     }}>
-                    <h4 className="font-semibold text-lg">Cat Care</h4>
-                    <p>Learn how to take care of your cat.</p>
+                    <h4 className="font-semibold text-lg text-soft-cream">Cat Care</h4>
+                    <p className='text-soft-cream'>Learn how to take care of your cat.</p>
                 </div>
                 <div className="bg-gray-300 p-6 rounded-lg shadow-lg">
                     <h4 className="font-semibold text-lg">Cat Nutrition</h4>
