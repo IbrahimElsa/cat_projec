@@ -65,12 +65,12 @@ const Navbar = () => {
                     </div>
                     {/* Dropdown Menu */}
                     {openDropdown === 'food-nutrition' && (
-                        <div className={`dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3] transition`}>
-                            <Link to="/food-nutrition#requirements" className="block px-6 py-2 hover:bg-mid-green">Nutritional Requirements</Link>
-                            <Link to="/food-nutrition#recommended-foods" className="block px-6 py-2 hover:bg-mid-green">Recommended Foods</Link>
-                            <Link to="/food-nutrition#special-diets" className="block px-6 py-2 hover:bg-mid-green">Special Diets</Link>
-                            <Link to="/food-nutrition#safety" className="block px-6 py-2 hover:bg-mid-green">Food Safety and Storage</Link>
-                            <Link to="/food-nutrition#reviews" className="block px-6 py-2 hover:bg-mid-green">Food Reviews</Link>
+                        <div className={`dropdown-menu mt-2 py-2  bg-[#a3bba3] transition`}>
+                            <Link to="/food-nutrition#requirements" className="block px-8 py-2 hover:bg-mid-green">Nutritional Requirements</Link>
+                            <Link to="/food-nutrition#recommended-foods" className="block px-8 py-2 hover:bg-mid-green">Recommended Foods</Link>
+                            <Link to="/food-nutrition#special-diets" className="block px-8 py-2 hover:bg-mid-green">Special Diets</Link>
+                            <Link to="/food-nutrition#safety" className="block px-8 py-2 hover:bg-mid-green">Food Safety and Storage</Link>
+                            <Link to="/food-nutrition#reviews" className="block px-8 py-2 hover:bg-mid-green">Food Reviews</Link>
                         </div>
                     )}
                 </div>
@@ -84,12 +84,12 @@ const Navbar = () => {
                         <IoIosArrowDown className={`block min-h-6 min-w-6 transform transition duration-300 ease-in-out ${openDropdown === 'litter-hygiene' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {openDropdown === 'litter-hygiene' && (
-                        <div className="dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3] ">
-                        <Link to="/litter-hygiene#types-of-litter" className="py-2 px-6 block hover:bg-mid-green">Types of Litter</Link>
-                        <Link to="/litter-hygiene#litter-box-maintenance" className="py-2 px-6 block hover:bg-mid-green">Litter Box Maintenance</Link>
-                        <Link to="/litter-hygiene#litter-box-training" className="py-2 px-6 block hover:bg-mid-green">Litter Box Training</Link>
-                        <Link to="/litter-hygiene#common-issues" className="py-2 px-6 block hover:bg-mid-green">Common Issues</Link>
-                        <Link to="/litter-hygiene#product-reviews" className="py-2 px-6 block hover:bg-mid-green">Product Reviews</Link>                        
+                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3] ">
+                        <Link to="/litter-hygiene#types-of-litter" className="py-2 px-8 block hover:bg-mid-green">Types of Litter</Link>
+                        <Link to="/litter-hygiene#litter-box-maintenance" className="py-2 px-8 block hover:bg-mid-green">Litter Box Maintenance</Link>
+                        <Link to="/litter-hygiene#litter-box-training" className="py-2 px-8 block hover:bg-mid-green">Litter Box Training</Link>
+                        <Link to="/litter-hygiene#common-issues" className="py-2 px-8 block hover:bg-mid-green">Common Issues</Link>
+                        <Link to="/litter-hygiene#product-reviews" className="py-2 px-8 block hover:bg-mid-green">Product Reviews</Link>                        
                     </div>
                     )}
                 </div>
@@ -103,12 +103,12 @@ const Navbar = () => {
                         <IoIosArrowDown className={`block min-h-6 min-w-6  transform transition duration-300 ease-in-out ${openDropdown === 'behavior-training' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {openDropdown === 'behavior-training' && (
-                        <div className="dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3]">
-                        <Link to="/behavior-training#understanding-behavior" className="py-2 px-6 block hover:bg-mid-green">Understanding Behavior</Link>
-                        <Link to="/behavior-training#training-basics" className="py-2 px-6 block hover:bg-mid-green">Training Basics</Link>
-                        <Link to="/behavior-training#behavioral-issues" className="py-2 px-6 block hover:bg-mid-green">Behavioral Issues</Link>
-                        <Link to="/behavior-training#enrichment-toys" className="py-2 px-6 block hover:bg-mid-green">Enrichment and Toys</Link>
-                        <Link to="/behavior-training#socialization-tips" className="py-2 px-6 block hover:bg-mid-green">Socialization Tips</Link>                        
+                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3]">
+                        <Link to="/behavior-training#understanding-behavior" className="py-2 px-8 block hover:bg-mid-green">Understanding Behavior</Link>
+                        <Link to="/behavior-training#training-basics" className="py-2 px-8 block hover:bg-mid-green">Training Basics</Link>
+                        <Link to="/behavior-training#behavioral-issues" className="py-2 px-8 block hover:bg-mid-green">Behavioral Issues</Link>
+                        <Link to="/behavior-training#enrichment-toys" className="py-2 px-8 block hover:bg-mid-green">Enrichment and Toys</Link>
+                        <Link to="/behavior-training#socialization-tips" className="py-2 px-8 block hover:bg-mid-green">Socialization Tips</Link>                        
                         </div>
                     )}
                 </div>
@@ -122,13 +122,13 @@ const Navbar = () => {
                         <IoIosArrowDown className={`block min-h-6 min-w-6  transform transition duration-300 ease-in-out ${openDropdown === 'health-wellness' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {openDropdown === 'health-wellness' && (
-                        <div className="dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3]">
-                        <Link to="/health-wellness#common-health-issues" className="py-2 px-6 block hover:bg-mid-green">Common Health Issues</Link>
-                        <Link to="/health-wellness#preventative-care" className="py-2 px-6 block hover:bg-mid-green">Preventative Care</Link>
-                        <Link to="/health-wellness#vaccinations" className="py-2 px-6 block hover:bg-mid-green">Vaccinations</Link>
-                        <Link to="/health-wellness#spaying-neutering" className="py-2 px-6 block hover:bg-mid-green">Spaying and Neutering</Link>
-                        <Link to="/health-wellness#first-aid" className="py-2 px-6 block hover:bg-mid-green">First Aid Tips</Link>
-                        <Link to="/health-wellness#vet-visits" className="py-2 px-6 block hover:bg-mid-green">When to Visit a Vet</Link>                        
+                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3]">
+                        <Link to="/health-wellness#common-health-issues" className="py-2 px-8 block hover:bg-mid-green">Common Health Issues</Link>
+                        <Link to="/health-wellness#preventative-care" className="py-2 px-8 block hover:bg-mid-green">Preventative Care</Link>
+                        <Link to="/health-wellness#vaccinations" className="py-2 px-8 block hover:bg-mid-green">Vaccinations</Link>
+                        <Link to="/health-wellness#spaying-neutering" className="py-2 px-8 block hover:bg-mid-green">Spaying and Neutering</Link>
+                        <Link to="/health-wellness#first-aid" className="py-2 px-8 block hover:bg-mid-green">First Aid Tips</Link>
+                        <Link to="/health-wellness#vet-visits" className="py-2 px-8 block hover:bg-mid-green">When to Visit a Vet</Link>                        
                         </div>
                     )}
                 </div>
@@ -141,10 +141,10 @@ const Navbar = () => {
                         <IoIosArrowDown className={`block min-h-6 min-w-6  transform transition duration-300 ease-in-out ${openDropdown === 'breeds' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {openDropdown === 'breeds' && (
-                        <div className="dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3] ">
-                        <Link to="/breeds#overview" className="py-2 px-6 block hover:bg-mid-green">Overview of Breeds</Link>
-                        <Link to="/breeds#breed-specific-care" className="py-2 px-6 block hover:bg-mid-green">Breed-Specific Care</Link>
-                        <Link to="/breeds#choosing-right-breed" className="py-2 px-6 block hover:bg-mid-green">Choosing the Right Breed</Link>                        
+                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3] ">
+                        <Link to="/breeds#overview" className="py-2 px-8 block hover:bg-mid-green">Overview of Breeds</Link>
+                        <Link to="/breeds#breed-specific-care" className="py-2 px-8 block hover:bg-mid-green">Breed-Specific Care</Link>
+                        <Link to="/breeds#choosing-right-breed" className="py-2 px-8 block hover:bg-mid-green">Choosing the Right Breed</Link>                        
                         </div>
                     )}
                 </div>
@@ -157,12 +157,12 @@ const Navbar = () => {
                         <IoIosArrowDown className={`block min-h-6 min-w-6  transform transition duration-300 ease-in-out ${openDropdown === 'product-reviews' ? '-rotate-180' : ''}`}/>                    
                     </div>
                     {openDropdown === 'product-reviews' && (
-                        <div className="dropdown-menu mt-2 py-2 pl-3 bg-[#a3bba3]">
-                        <Link to="/product-reviews#food-treats" className="py-2 px-6 block hover:bg-mid-green">Food and Treats</Link>
-                        <Link to="/product-reviews#litter-boxes" className="py-2 px-6 block hover:bg-mid-green">Litter and Litter Boxes</Link>
-                        <Link to="/product-reviews#toys" className="py-2 px-6 block hover:bg-mid-green">Toys and Enrichment</Link>
-                        <Link to="/product-reviews#grooming-tools" className="py-2 px-6 block hover:bg-mid-green">Grooming Tools</Link>
-                        <Link to="/product-reviews#beds-furniture" className="py-2 px-6 block hover:bg-mid-green">Beds and Furniture</Link>                        
+                        <div className="dropdown-menu mt-2 py-2 bg-[#a3bba3]">
+                        <Link to="/product-reviews#food-treats" className="py-2 px-8 block hover:bg-mid-green">Food and Treats</Link>
+                        <Link to="/product-reviews#litter-boxes" className="py-2 px-8 block hover:bg-mid-green">Litter and Litter Boxes</Link>
+                        <Link to="/product-reviews#toys" className="py-2 px-8 block hover:bg-mid-green">Toys and Enrichment</Link>
+                        <Link to="/product-reviews#grooming-tools" className="py-2 px-8 block hover:bg-mid-green">Grooming Tools</Link>
+                        <Link to="/product-reviews#beds-furniture" className="py-2 px-8 block hover:bg-mid-green">Beds and Furniture</Link>                        
                         </div>
                     )}
                 </div>
