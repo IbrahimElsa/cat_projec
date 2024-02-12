@@ -10,7 +10,7 @@ function Nutrition() {
                 </div>
                 <div className="">
                     <h1 id='requirements' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2">Nutritional Requirements</h1>
-                    <p className="text-base mt-1">
+                    <p className="text-base mt-1 xl:pl-2 pl-4">
                         Protein: Cats are obligate carnivores, which means their diet must be primarily composed of meat. High-quality animal-based 
                         proteins should be the foundation of their diet, providing essential amino acids like taurine, which is crucial for heart health, vision, and reproduction.
                         <br />Fats: Fats provide energy, help absorb certain vitamins, and contribute to a healthy skin and coat. Essential fatty acids, such as omega-3 and omega-6, are vital for maintaining overall health.
@@ -24,8 +24,8 @@ function Nutrition() {
                         including heart disease and blindness.
                         <br /><br />Carbohydrates: They are NOT recommended for cats as they have adapted to attain most of their energy from protien and fats. Giving a carb 
                         heavy diet may result in things like obesity, digestive issues, and nutritional imbalances.</p>
-                    <h1 id='recommended-foods' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4" >Recommended Foods</h1>
-                    <p className="text-base mt-1">
+                    <h1 id='recommended-foods' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2" >Recommended Foods</h1>
+                    <p className="text-base mt-1 xl:pl-2 pl-4">
                         High-Quality Dry Food (Kibble): Look for brands that list a high-quality animal protein (e.g., chicken, turkey, fish) as the first few ingredient and
                         that are formulated to meet the nutritional levels established by the AAFCO Cat Food Nutrient Profiles for the specific life stage of your cat.
                         <br /><br />Wet Food (Canned, Pouches): Wet food is highly recommended for hydration and can be especially beneficial for cats prone to urinary tract 
@@ -36,8 +36,8 @@ function Nutrition() {
                         is balanced and meets your cat’s nutritional needs. Homemade diets can be time-consuming and require careful planning to ensure they are nutritionally 
                         complete, but may be the best option for offering your cat a high-quality diet.
                     </p>
-                    <h1 id='special-diets' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4" >Special Diets</h1>
-                    <p className="text-base mt-1">
+                    <h1 id='special-diets' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2" >Special Diets</h1>
+                    <p className="text-base mt-1 xl:pl-2 pl-4">
                         Weight Management: If your cat is overweight or obese, a special diet may be recommended to help them lose weight. These diets are typically lower in 
                         calories and higher in fiber to help cats feel full while consuming fewer calories. They may also contain added nutrients to support weight loss and 
                         overall health.
@@ -48,8 +48,8 @@ function Nutrition() {
                         <br /><br />Limited ingredient: Cats with food allergies may benefit from a special, limited ingredient diet that is free from common allergens, such as chicken, beef, or grains. These 
                         diets are formulated to be hypoallergenic and may contain novel protein sources and limited ingredients to reduce the risk of allergic reactions.
                     </p>
-                    <h1 id='safety' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4">Food Safety and Storage</h1>
-                    <p className="text-base mt-1">
+                    <h1 id='safety' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2">Food Safety and Storage</h1>
+                    <p className="text-base mt-1 xl:pl-2 pl-4">
                         Food Safety: Always check the expiry date on the cat food packeging before purchasing and feeding it to your cat, ensuring that the food is within the 
                         safe consumption period. Be aware of food recalls for cat food brands and products, as they may be contaminated or other safety concerns with the product. 
                         <br /><br />Handling Dry food: store dry food in a cool, dry place, and keep it in the original packaging or an airtight container to maintain freshness and to
@@ -59,7 +59,7 @@ function Nutrition() {
                         Refrigerated food can be gently warmed by placing the container in a bowl of warm water for a few minutes. The wet food should never be microwaved as 
                         the heat can create hot spots and burn the cat’s mouth.
                     </p>
-                    <h1 id='reviews' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4">Food Reviews</h1>
+                    <h1 id='reviews' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2">Food Reviews</h1>
                     <p className="text-base mt-1">Section Reviews</p>
                 </div>
             </div>
