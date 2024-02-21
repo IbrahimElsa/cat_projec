@@ -1,7 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import ProductCarousel from '../components/ProductCarousel';
+import Cat1 from '../assets/catWikiLogo.png';
+
+
 
 function Nutrition() {
+    const reviews = [
+        { id: 1, title: "Product 1", imageSrc: Cat1 },
+        { id: 2, title: "Product 2", imageSrc: Cat1 },
+    ];
+
+
     return (
         <div className="flex">
             <Navbar />
@@ -60,7 +70,7 @@ function Nutrition() {
                         the heat can create hot spots and burn the cat’s mouth.
                     </p>
                     <h1 id='reviews' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2">Food Reviews</h1>
-                    <p className="text-base mt-1">Section Reviews</p>
+                    <ProductCarousel reviews={reviews} />
                 </div>
             </div>
         </div>
