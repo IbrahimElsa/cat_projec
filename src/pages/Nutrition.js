@@ -1,16 +1,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import ProductCarousel from '../components/ProductCarousel';
-import Cat1 from '../assets/catWikiLogo.png';
+import Logo from '../assets/catWikiLogo.png';
 
-
+const products = [
+    {
+        name: "Product 1",
+        imageUrl: Logo,
+        description: "This is a great product for cats."
+    },
+];
 
 function Nutrition() {
-    const reviews = [
-        { id: 1, title: "Product 1", imageSrc: Cat1 },
-        { id: 2, title: "Product 2", imageSrc: Cat1 },
-    ];
 
+    const products = ["Product 1", "Product 2", "Product 3", "Product 4"];
 
     return (
         <div className="flex">
@@ -70,7 +72,15 @@ function Nutrition() {
                         the heat can create hot spots and burn the cat’s mouth.
                     </p>
                     <h1 id='reviews' className="text-2xl mb-1 text-mid-green font-bold xl:pl-4 pt-4 pl-2">Food Reviews</h1>
-                    <ProductCarousel reviews={reviews} />
+                    <div className="flex space-x-4 overflow-auto xl:pl-4 pt-4 pl-2">
+                        {products.map((product, index) => (
+                            <div key={index} className="flex-none bg-gray-200 p-4 rounded-lg shadow-md w-60">
+                                <img src={product.imageUrl} alt={product.name} className="w-full h-40 object-cover rounded-lg" />
+                                <h3 className="text-lg font-bold mt-2">{product.name}</h3>
+                                <p className="text-sm">{product.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
